@@ -1,5 +1,5 @@
 -- do you think you fell out of a coconut tree?? it's all about the context
--- TODO: test
+-- TODO: move the basic vim mapping to its own file
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -8,6 +8,16 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+-- where am i?
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- remain centered 
+vim.opt.scrolloff = 20
+
+-- keymaps
+require('motions')
 
 
 -- it's dangerous to install alone... take this
@@ -24,11 +34,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local lazy_opts = {
+    change_detection = {
+        enabled = true,
+        notify = false,
+    },
+}
+
 require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.core" },
     { import = "plugins.qol" },
-})
+    { import = "plugins.lsp" },
+}, lazy_opts)
 
 
 -- initializing drip, please wait...
