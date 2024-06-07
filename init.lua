@@ -1,4 +1,5 @@
 -- do you think you fell out of a coconut tree?? it's all about the context
+-- TODO: test
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -26,6 +27,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.core" },
+    { import = "plugins.qol" },
 })
 
 
