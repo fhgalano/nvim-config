@@ -46,6 +46,7 @@ require("lazy").setup({
     { import = "plugins.core" },
     { import = "plugins.qol" },
     { import = "plugins.lsp" },
+    { import = "plugins.autocmp" },
 }, lazy_opts)
 
 
