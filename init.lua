@@ -47,6 +47,7 @@ require("lazy").setup({
     { import = "plugins.qol" },
     { import = "plugins.lsp" },
     { import = "plugins.autocmp" },
+    { import = "plugins.dap" },
 }, lazy_opts)
 
 
@@ -56,4 +57,3 @@ vim.cmd.colorscheme("rose-pine")
 vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
 vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
-
