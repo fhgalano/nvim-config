@@ -10,12 +10,21 @@ return {
         },
         keys = {
             { '\\\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+            { '\\gs', ':Neotree float git_status<CR>', { desc = 'NeoTree [G]it [S]tatus' } },
         },
         window = {
             mappings = {
               ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
-              ['\\\\'] = { "close_window" },
             }
-          }
+        },
+        opts = {
+            filesystem = {
+                window = {
+                    mappings = {
+                        ['\\\\'] = "close_window",
+                    }
+                }
+            }
+        },
     }
 }
