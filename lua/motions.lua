@@ -10,4 +10,9 @@ vim.keymap.set('n', '<c-l>', '<c-w><c-l>', {desc = "move to window right" })
 -- vim.keymap.set('n', '<s-cr>', 'o<esc>', { desc = "add newline while remaining normal" })
 -- NOTE: Mapping <s-cr> or <c-cr> is generally not possible because of how the terminal receives that input
 -- this is not the case for gvim instances (i.e. vim in jetbrains IDEs)
-vim.keymap.set('n', 'N', 'o<esc>', { desc = "add newline while remaining normal" })
+vim.keymap.set('n', 'L', 'o<esc>', { desc = "add newline while remaining normal" })
+
+
+-- Vim Diagnostics (stolen from kickstart)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

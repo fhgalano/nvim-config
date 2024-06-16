@@ -6,13 +6,6 @@ return {
         { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
-        local lsp = require('lspconfig')
-
-        lsp.lua_ls.setup({})
-        -- lsp.rust_analyzer.setup({})
-
-
-
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
             callback = function(event)
@@ -44,5 +37,12 @@ return {
                 end
             end
         })
+
+        local servers = require('lspserverlist')
+        for lsp, settings in pairs(servers) do
+            if lsp ~= "rust_analyzer" then
+                require('lspconfig')[lsp].setup(settings)
+            end
+        end
     end
 }

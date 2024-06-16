@@ -36,10 +36,11 @@ return {
         -- TODO: Find way to generate servers list from installed files
         local servers = require('lspserverlist')
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        for _, lsp in ipairs(servers) do
-            require('lspconfig')[lsp].setup {
-                capabilities = capabilities
-            }
+        for lsp, settings in pairs(servers) do
+            if lsp ~= "rust_analyzer" then
+                settings.capabilities = vim.tbl_deep_extend('force', {}, capabilities, settings.capabilities or {})
+                require('lspconfig')[lsp].setup(settings)
+            end
         end
     end
 }

@@ -4,8 +4,12 @@ return {
         'williamboman/mason-lspconfig.nvim',
         config = function()
             local servers = require("lspserverlist")
+            local server_names = {}
+            for k,_ in pairs(servers) do
+                server_names[#server_names+1] = k
+            end
             require("mason-lspconfig").setup {
-                ensure_installed = servers,
+                ensure_installed = server_names,
             }
         end
     },
