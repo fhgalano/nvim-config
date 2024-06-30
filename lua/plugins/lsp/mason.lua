@@ -1,5 +1,9 @@
 return {
-    { "williamboman/mason.nvim", config = true },
+    {
+        "williamboman/mason.nvim",
+        config = true,
+        opts = { ensure_installed = { "debugpy" } }
+    },
     {
         'williamboman/mason-lspconfig.nvim',
         config = function()

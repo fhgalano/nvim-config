@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
     {
         "rcarriga/nvim-dap-ui",
@@ -42,12 +43,12 @@ return {
             dap.listeners.before.launch.dapui_config = function()
                 dui.open()
             end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                dui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                dui.close()
-            end
+            -- dap.listeners.before.event_terminated.dapui_config = function()
+            --     dui.close()
+            -- end
+            -- dap.listeners.before.event_exited.dapui_config = function()
+            --     dui.close()
+            -- end
 
             vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
 

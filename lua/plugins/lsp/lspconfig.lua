@@ -14,12 +14,14 @@ return {
                 end
 
                 map('<leader>gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+                map('<leader>gD', "<cmd>vsplit | lua require('telescope.builtin').lsp_definitions()<cr>", '[G]oto [D]efinition')
                 map('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
                 map('<leader>gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
                 map('<leader>gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype')
                 map('<leader>rn', vim.lsp.buf.rename, '[R]e[N]ame')
                 map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
                 map('<leader>rn', vim.lsp.buf.rename, '[R]e[N]ame')
+
 
                 vim.keymap.set('i', '<c-space>', vim.lsp.buf.completion, { buffer = event.buf, desc = 'LSP: Code Completion' })
 

@@ -10,6 +10,26 @@ local serverlist = {
         end,
     },
     pylsp = {
+        on_attach = function()
+            local neo = require("neotest")
+
+            vim.keymap.set('n', '<leader>rt', neo.run.run, { desc = "[R]un [T]his"})
+            vim.keymap.set('n', '<leader>rr', neo.run.run_last, { desc = "[R]un Last"})
+            vim.keymap.set('n', '<leader>rf',
+                function()
+                    neo.run.run(vim.fn.expand("%"))
+                end, { desc = "[R]un [F]ile"})
+
+            vim.keymap.set('n', '<leader>dt',
+                function()
+                    neo.run.run({strategy = "dap"})
+                    -- require("dap-python").test_method()
+                end, { desc = "[D]ebug [T]his"})
+            vim.keymap.set('n', '<leader>dd',
+                function()
+                    neo.run.run_last({strategy = "dap"})
+                end, { desc = "[D]ebug Last"})
+        end,
         settings = {
             python = {
                 analysis = {
@@ -32,3 +52,4 @@ local serverlist = {
 }
 
 return serverlist
+

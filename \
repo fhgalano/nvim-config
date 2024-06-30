@@ -48,7 +48,6 @@ require("lazy").setup({
     { import = "plugins.lsp" },
     { import = "plugins.autocmp" },
     { import = "plugins.dap" },
-    { import = "plugins.gitstuff" },
 }, lazy_opts)
 
 
@@ -59,9 +58,9 @@ require("onedark").setup({
 })
 vim.cmd.colorscheme("onedark")
 
-vim.api.nvim_set_hl(0, "Normal", { blend=10 })
-vim.api.nvim_set_hl(0, "NormalFloat", {blend=10})
-vim.api.nvim_set_hl(0, "NormalNC", {blend=10})
+vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})
 
 -- overwriting icons
 require('debug_colors')
