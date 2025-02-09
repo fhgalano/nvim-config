@@ -49,6 +49,7 @@ require("lazy").setup({
     { import = "plugins.autocmp" },
     { import = "plugins.dap" },
     { import = "plugins.gitstuff" },
+    { import = "plugins.custom" },
 }, lazy_opts)
 
 
