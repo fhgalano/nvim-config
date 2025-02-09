@@ -11,6 +11,7 @@ return {
         keys = {
             { '\\\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
             { '\\gs', ':Neotree git_status<CR>', { desc = 'NeoTree [G]it [S]tatus' } },
+            { '\\x', ':Neotree close<CR>', { desc = "Neotree [C]lose" } },
         },
         window = {
             mappings = {
