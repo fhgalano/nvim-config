@@ -9,6 +9,15 @@ local serverlist = {
           end
         end,
     },
+    ts_ls = {
+        init_options = {
+            preferences = {
+                disableSuggestions = true,
+            }
+        }
+    },
+    cssls = {},
+    html = {},
     pylsp = {
         on_attach = function()
             local neo = require("neotest")
@@ -31,10 +40,20 @@ local serverlist = {
                 end, { desc = "[D]ebug Last"})
         end,
         settings = {
+            pyright = {
+                -- Using Ruff's import organizer
+                disableOrganizeImports = true,
+                disableLanguageServices = false,
+            },
             python = {
+                pythonPath = 'usr/bin/python3',
                 analysis = {
                     -- Ignore all files for analysis to exclusively use Ruff for linting
-                    ignore = { '*' },
+                    -- ignore = { '*' },
+                    autoSearchPaths = true,
+                    diagnosticMode = 'openFilesOnly',
+                    useLibraryCodeForTypes = true,
+                    typeCheckingMode = 'off',
                 },
             },
             pylsp = {
@@ -44,6 +63,10 @@ local serverlist = {
                     },
                     pyflakes = {
                         enabled = false
+                    },
+                    -- auto-completion options
+                    jedi_completion = {
+                        fuzzy = true
                     },
                 },
             },
