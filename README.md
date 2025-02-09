@@ -11,3 +11,9 @@ If you somehow stumble on this configuration and are looking resources to help y
 - [primeagen's "guide"](https://www.youtube.com/watch?v=w7i4amO_zaE&t=565s)
 
 These references were incredibly helpful, but nothing was more useful than just reading the docs for major plugins (i.e. lazy, nvim-lspconfig, nvim-cmp, treesitter, mason). It's important to note that these references can quickly go stale - it's worth browsing the currently popular plugins [here](https://dotfyle.com/neovim/plugins/trending)
+
+## Other Notes
+
+To get the rust debugger to work, you need to install codelldb through Mason - you could definitely update the config so that this is installed by default.
+
+For telescope Grep search to work, you need to make sure that `ripgrep` is installed
