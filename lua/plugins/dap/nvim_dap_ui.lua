@@ -50,11 +50,7 @@ return {
             --     dui.close()
             -- end
 
-            vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-
-            vim.keymap.set("n", "<f1>", dap.continue)
-            vim.keymap.set("n", "<f2>", dap.step_into)
-            vim.keymap.set("n", "<f3>", dap.step_over)
+            vim.keymap.set("n", "<leader>dx", dui.toggle, { desc= "Debug: Toggle UI" })
         end,
     },
 }
