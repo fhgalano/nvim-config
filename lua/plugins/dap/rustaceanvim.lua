@@ -60,6 +60,13 @@ return {
                     default_settings = {
                         -- rust-analyzer language server configuration
                         ['rust-analyzer'] = {
+                            procMacro = {
+                                ignored = {
+                                    leptos_macro = {
+                                        "server",
+                                    },
+                                },
+                            },
                         },
                     },
                 },
