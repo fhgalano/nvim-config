@@ -50,7 +50,14 @@ return {
         },
     },
     keys = {
-        { '\\gd', ':Gitsigns diffthis<CR>', { desc = 'NeoTree [G]it [S]tatus' } },
+        { '\\gdf', ':Gitsigns diffthis<CR>', { desc = '[G]itsigns [D]iff [F]ile' } },
+        { '\\gsh', ':Gitsigns stage_hunk<CR>', { desc = '[G]itsigns [S]tage [H]unk' } },
+        { '\\gsf', ':Gitsigns stage_buffer<CR>', { desc = '[G]itsigns [S]tage [F]ile' } },
+        { '\\grh', ':Gitsigns reset_hunk<CR>', { desc = '[G]itsigns [R]eset [H]unk' } },
+        { '\\grf', ':Gitsigns reset_buffer<CR>', { desc = '[G]itsigns [R]eset [F]ile' } },
+        { '\\gph', ':Gitsigns preview_hunk_inline<CR>', { desc = '[G]itsigns [P]review [H]unk' } },
+        { '\\ggn', ':Gitsigns next_hunk<CR>', { desc = '[G]itsigns [G]o [N]ext_hunk' } },
+        { '\\ggp', ':Gitsigns next_hunk<CR>', { desc = '[G]itsigns [G]o [P]rev_hunk' } },
     },
     lazy = false,
 }
