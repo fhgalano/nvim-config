@@ -10,7 +10,9 @@ return {
             local servers = require("lspserverlist")
             local server_names = {}
             for k,_ in pairs(servers) do
-                server_names[#server_names+1] = k
+                if k ~= "rust_analyzer" then
+                    server_names[#server_names+1] = k
+                end
             end
             require("mason-lspconfig").setup {
                 ensure_installed = server_names,
